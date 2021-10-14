@@ -1,0 +1,19 @@
+<%= month_calendar events: @plans do |date, plans| %>
+  <%= date.day %>
+  <% plans.each do |plan| %>
+    <div>
+      <%= link_to "・#{plan.housework.title}", housework_path(plan.housework_id) %>
+    </div>
+  <% end %>
+<% end %>
+
+  <tbody>
+    <% @plans.each do |plan| %>
+      <tr>
+        <td><%= plan.housework.title %></td>
+        <td><%= plan.start_time.strftime("%Y-%m-%d %H:%M") %></td>
+        <td><%= link_to '編集する', edit_plan_path(plan.id) %></td>
+        <td><%= link_to '削除する',plan_path(plan.id), method: :delete %></td>
+      </tr>
+    <% end %>
+  </tbody>

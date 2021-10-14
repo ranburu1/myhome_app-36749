@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MyhomeApp36749</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+     <header class="header">
+      <h1 class="site-title"><a href="/plans">Myhome</a></h1>
+      <nav>
+        <ul>
+          <li><a class="post" href="/houseworks">家事一覧</a></li>
+          <li><a class="post" href="/houseworks/new">家事作成</a></li>
+          <li><a class="post" href="/plans/new">予定を入れる</a></li>
+        </ul>
+      </nav>
+     </header>
+    <%= yield %>
+  </body>
+</html>
