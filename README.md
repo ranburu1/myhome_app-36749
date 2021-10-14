@@ -1,24 +1,22 @@
-# README
+# テーブル設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## houseworks テーブル
 
-Things you may want to cover:
+| Column             | Type   | Options                   |
+| ------------------ | ------ | ------------------------- |
+| title              | string | null: false               |
+| manner             | string | null: false               |
 
-* Ruby version
 
-* System dependencies
+### Association
 
-* Configuration
+- belongs_to :plan
 
-* Database creation
+## planss テーブル
 
-* Database initialization
+| Column             | Type       | Options                        |
+| ------------------ | ---------- | ------------------------------ |
+| start_time         | datetime   | null: false                    |
+| housework          | references | null: false, foreign_key: true |
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- has_many :houseworks
